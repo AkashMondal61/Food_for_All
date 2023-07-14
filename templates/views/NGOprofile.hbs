@@ -254,38 +254,8 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="/js/NGOprofile.js"></script>
-	<script> var menu = document.getElementById("menu");
-        menu.style.maxHeight = "0px";
-        function togglemenu() {
-            if (menu.style.maxHeight == "0px") {
-                menu.style.maxHeight = "390px";
-            }
-            else {
-                menu.style.maxHeight = "0px";
-            }
-        }
-		// Assuming you have a div element with the date value
-var divElement = document.getElementById("idd");
-var dateString = divElement.innerHTML;
-
-// Extract the date string in the format "Jul 28 2023"
-var dateOnlyString = dateString.split(" ")[1] + " " + dateString.split(" ")[2] + " " + dateString.split(" ")[3];
-
-// Convert the date string to a Date object
-var dateObject = new Date(dateOnlyString);
-
-// Get the individual date components
-var day = dateObject.getDate();
-var month = dateObject.getMonth() + 1; // Months are zero-based, so we add 1
-var year = dateObject.getFullYear() % 100; // Get the last two digits of the year
-
-// Format the date as dd/mm/yy
-var formattedDate = `${day}/${month}/${year}`;
-
-// Output the formatted date
-console.log(formattedDate);
-divElement.innerHTML=formattedDate;
-		</script>
+	<script src="/js/profile.js"></script>
+	<script src="/js/navbar.js"></script>
 </body>
 
 </html>
