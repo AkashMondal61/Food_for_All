@@ -8,7 +8,7 @@ var h1Tag = document.getElementById("nam");
 // Get the text content of the <h1> tag
 var imageNames = h1Tag.textContent;
 var imagesArray = imageNames.split(",");
-console.log(imagesArray);
+console.log(imagesArray.length);
 // fetch('imageFile.txt')
 //   .then(response => response.text())
 //   .then(data => {
@@ -24,6 +24,13 @@ console.log(imagesArray);
 //     });
 //     showSlide(slideIndex); // Call the showSlide function after the img elements are created
 //   });
+// if(imagesArray.length==0) 
+// {
+//   var divElement = document.getElementById("aa");
+// console.log(divElement);
+// // Hide the div by setting the CSS display property to "none"
+// divElement.style.display = "none";
+// }
   for (var i = 0; i < imagesArray.length; i++) {
     // Create an <img> element
     var img = document.createElement("img");

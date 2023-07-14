@@ -540,7 +540,6 @@ html {
         margin: 50px auto;
     }
 }
-
 /****************************** FOOTER **************************/
 footer {
     color: rgba(255, 255, 255, 0.8);
@@ -572,7 +571,7 @@ footer a strong {
         padding: 15px 6%;
     }
 }
-/********************** New *******************/
+/********************** Profile *******************/
 .profile {
     height: 3rem;
     width: auto;
@@ -634,7 +633,6 @@ footer a strong {
     box-shadow: 0px 0px 100px rgba(20, 18, 18, 0.25);
     display: none; 
   } 
-  
    ul li:hover > ul,
   ul li ul:hover {
     visibility: visible;
