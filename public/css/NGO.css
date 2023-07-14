@@ -48,7 +48,7 @@ body{
 
     /* background-color: blue; */
 }
-.logo{
+.logoo{
     width : 120px;
     height: 120px;
     border-radius: 50%;
@@ -375,7 +375,7 @@ body{
   margin: 5% auto;
   width: 800px;
   /* height: 500px; */
-  box-shadow: 0px 0px 3px rgb(241, 236, 236);
+  /* box-shadow: 0px 0px 3px rgb(241, 236, 236); */
   /* position: relative; */
   overflow: hidden;
  /* display: none; */
