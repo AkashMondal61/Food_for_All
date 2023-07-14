@@ -1,17 +1,36 @@
 const NGO = require('../models/NGOModel');
 const donor = require('../models/donorModel');
 
-const getHomePage = (req, res) => {
-    // console.log(req.cookies.access_token);
-    if(req._id){
-        res.status(200).render('home', {valid : true, user : req.user});
-    }
-    else{
-        res.status(200).render('home', {valid : false});
+const getHomePage = async (req, res) => {
+    try {
+        const ngoCount = await NGO.count();
+        const donorCount = await donor.count();
+        const maxDonor = await donor.find({}, {firstName : 1, lastName : 1, totalAmount : 1}).sort({totalAmount : -1}).limit(1);
+        const maxNgo = await NGO.find({}, {name : 1, fund : 1}).sort({fund : -1}).limit(1);
+        const totalFund = await NGO.aggregate([{ $group: { _id : null, sum : { $sum: "$fund" } }}]);
+        const data = {
+            valid : false,
+            donorCount,
+            ngoCount,
+            maxDonor : maxDonor[0],
+            maxNgo : maxNgo[0],
+            fund : totalFund[0].sum
+        }
+        if(req._id){
+            data.valid = true,
+            data.user = req.user
+        }
+        res.status(200).render('home', data);
+    } catch (error) {
+        console.log(error.message);
+        res.status(500).redirect('/');
     }
 }
 const getContactPage = (req, res) => {
-    res.status(200).render('contact');
+    if(req._id)
+        res.status(200).render('contact', {valid : true, user : req.user});
+    else
+        res.status(200).render('contact', {valid : false});
 }
 const getLoginPage = (req, res) => {
     res.status(200).render('loginpage');
@@ -19,7 +38,10 @@ const getLoginPage = (req, res) => {
 const getSchemePage = async (req, res) => {
     try {
         const card = await NGO.find();
-        res.status(200).render('schemes', {card})
+        if(req._id)
+            res.status(200).render('schemes', {card, valid : true, user : req.user});
+        else
+            res.status(200).render('schemes', {card, valid : false});
     } catch (error) {
         res.status(500).render('thank', {
             success : false,
@@ -54,10 +76,15 @@ const getLogOutPage = (req, res) => {
 }
 const getNGOPage = async (req, res) => {
     try {
-        const user = await NGO.findById(req.params.id);
-        if(!user)
+        const ngo = await NGO.findById(req.params.id);
+        if(!ngo)
             throw new Error('NGO not found!');
-        res.status(200).render('NGO', user);
+        ngo.valid = false;
+        if(req._id){
+            ngo.valid = true;
+            ngo.user = req.user;
+        }
+        res.status(200).render('NGO', ngo);
     } catch (err) {
         res.status(400).render('thank', {
             success : false,

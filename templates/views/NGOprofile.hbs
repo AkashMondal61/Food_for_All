@@ -9,9 +9,11 @@
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/NGOprofile.css">
+	<link rel="stylesheet" type="text/css" href="/css/navbar.css">
 </head>
 
 <body>
+	{{>navbar}}
 	<section class="py-5 my-5">
 		<div class="container">
 			<h1 class="mb-5">Account Settings</h1>
@@ -126,8 +128,7 @@
 								<div class="col-md-12">
 									<div class="form-group">
 										<label>About</label>
-										<textarea class="form-control" name="description"
-											rows="4">{{description}}</textarea>
+										<textarea class="form-control" name="description" rows="4">{{description}}</textarea>
 									</div>
 								</div>
 
@@ -229,7 +230,6 @@
 						<div class="payment">
 							<h3 class="mb-4">Payment History</h3>
 							<div class="tytle">
-
 							</div>
 							<table>
 								<tr>
@@ -238,18 +238,9 @@
 									<th>Date</th>
 									<th>Transaction ID</th>
 								</tr>
-								<tr>
-									<th><a href="#">Akash mondal</a></th>
-									<th>40000</th>
-									<th>12/12/23</th>
-									<th>AM6546894654</th>
-								</tr>
-								<tr>
-									<th><a href="#">Akash Mondal</a></th>
-									<th>40000</th>
-									<th>12/12/23</th>
-									<th>AM6546894654</th>
-								</tr>
+								{{#each donations}}
+      								{{>ngoDonation donation=.}}
+    							{{/each}}
 							</table>
 						</div>
 					</div>
@@ -263,6 +254,38 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="/js/NGOprofile.js"></script>
+	<script> var menu = document.getElementById("menu");
+        menu.style.maxHeight = "0px";
+        function togglemenu() {
+            if (menu.style.maxHeight == "0px") {
+                menu.style.maxHeight = "390px";
+            }
+            else {
+                menu.style.maxHeight = "0px";
+            }
+        }
+		// Assuming you have a div element with the date value
+var divElement = document.getElementById("idd");
+var dateString = divElement.innerHTML;
+
+// Extract the date string in the format "Jul 28 2023"
+var dateOnlyString = dateString.split(" ")[1] + " " + dateString.split(" ")[2] + " " + dateString.split(" ")[3];
+
+// Convert the date string to a Date object
+var dateObject = new Date(dateOnlyString);
+
+// Get the individual date components
+var day = dateObject.getDate();
+var month = dateObject.getMonth() + 1; // Months are zero-based, so we add 1
+var year = dateObject.getFullYear() % 100; // Get the last two digits of the year
+
+// Format the date as dd/mm/yy
+var formattedDate = `${day}/${month}/${year}`;
+
+// Output the formatted date
+console.log(formattedDate);
+divElement.innerHTML=formattedDate;
+		</script>
 </body>
 
 </html>

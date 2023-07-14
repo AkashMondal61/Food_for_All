@@ -58,11 +58,19 @@
 
         <div class="details">
 
+            <div class="info" data-aos="fade-up">
+
+                <div class="logo"><i class="fa-regular fa-circle-dollar-to-slot"></i></div>
+                <p id="head">Make a difference</p>
+                <p>₹ 3,000 can help a child build a life and add wings to their dreams</p>
+
+            </div>
+
             <div class="info">
 
                 <div class="logo"><i class="fa-solid fa-circle-dollar-to-slot fa-beat-fade"></i></div>
                 <p id="head">Highest Donate</p>
-                <p>Mr Akash Mondal  Rs: 80000 to Khusyan Foundation</p>
+                <p>Mr {{maxDonor.firstName}} {{maxDonor.lastName}}  Rs: {{maxDonor.totalAmount}}</p>
 
             </div>
 
@@ -70,15 +78,7 @@
 
                 <div class="logo"><i class="fa-solid fa-money-check-dollar fa-beat"></i></div>
                 <p id="head">Highest collection</p>
-                <p>Khysian Foundation has raised Rs:500000 till now</p>
-            </div>
-
-            <div class="info" data-aos="fade-up">
-
-                <div class="logo"><i class="fa-regular fa-circle-dollar-to-slot"></i></div>
-                <p id="head">Make a difference</p>
-                <p>₹ 3,000 can help a child build a life and add wings to their dreams</p>
-
+                <p>{{maxNgo.name}} has raised Rs:{{maxNgo.fund}} till now</p>
             </div>
 
             <div class="info" data-aos="fade-up">
@@ -104,21 +104,21 @@
     
     <div class="counterbox">
         <div class="information" data-aos="fade-down">
-            <div class="number"><p class="num"  data-val="400">0</p></div>
+            <div class="number"><p class="num"  data-val="{{ngoCount}}">0</p></div>
             <div class="text"><p>NGO <br> connected</p></div>
         </div>
     </div>
 
     <div class="counterbox">
         <div class="information" data-aos="fade-down">
-            <div class="number"><p class="num"  data-val="400">0</p></div>
+            <div class="number"><p class="num"  data-val="{{donorCount}}">0</p></div>
             <div class="text"><p>Donors <br> connected</p></div>
         </div>
     </div>
 
     <div class="counterbox">
         <div class="information" data-aos="fade-down">
-            <div class="number"><p class="num" data-val="400">000</p></div>
+            <div class="number"><p class="num" data-val="{{fund}}">000</p></div>
             <div class="text"><p>Toatal amount <br> raised</p></div>
         </div>
     </div>
@@ -153,7 +153,7 @@
             }
         }
         let valueDisplays = document.querySelectorAll(".num");
-let interval = 4000;
+let interval = 20;
 
 valueDisplays.forEach((valueDisplay) => {
   let startValue = 0;

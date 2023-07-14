@@ -19,24 +19,20 @@
 				<div class="profile-tab-nav border-right">
 					<div class="p-4">
 						<div class="img-circle text-center mb-3">
-							<img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg"
-								alt="Image" class="shadow">
+							<img src="https://png.pngtree.com/png-vector/20190710/ourmid/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="Image" class="shadow">
 						</div>
 						<h4 class="text-center">{{firstName}} {{lastName}}</h4>
 					</div>
 					<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab"
-							aria-controls="account" aria-selected="true">
-							<i class="fa fa-home text-center mr-1"></i>
+						<a class="nav-link active" id="account-tab" data-toggle="pill" href="#account" role="tab" aria-controls="account" aria-selected="true">
+							<i class="fa fa-home text-center mr-1"></i> 
 							Account
 						</a>
-						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab"
-							aria-controls="password" aria-selected="false">
-							<i class="fa fa-key text-center mr-1"></i>
+						<a class="nav-link" id="password-tab" data-toggle="pill" href="#password" role="tab" aria-controls="password" aria-selected="false">
+							<i class="fa fa-key text-center mr-1"></i> 
 							Password
 						</a>
-						<a class="nav-link" id="password-tab" data-toggle="pill" href="#payment" role="tab"
-							aria-controls="password" aria-selected="false">
+						<a class="nav-link" id="password-tab" data-toggle="pill" href="#payment" role="tab" aria-controls="password" aria-selected="false">
 							<i class="fa fa-money text-center mr-1"></i>
 							Payment History
 						</a>
@@ -75,8 +71,7 @@
 								<div class="col-md-6">
 									<div class="form-group">
 										<label>Profession</label>
-										<input type="text" class="form-control" name="profession"
-											value="{{profession}}">
+										<input type="text" class="form-control" name="profession" value="{{profession}}">
 									</div>
 								</div>
 								<div class="col-md-6">
@@ -157,18 +152,9 @@
 										<th>Date</th>
 										<th>Transaction ID</th>
 									</tr>
-									<tr>
-										<th><a href="#">Khusyan Foundation</a></th>
-										<th>40000</th>
-										<th>12/12/23</th>
-										<th>AM6546894654</th>
-									</tr>
-									<tr>
-										<th><a href="#">Khusyan Foundation</a></th>
-										<th>40000</th>
-										<th>12/12/23</th>
-										<th>AM6546894654</th>
-									</tr>
+									{{#each donations}}
+      									{{>donorDonation donation=.}}
+    								{{/each}}
 								</table>
 							</div>
 						</div>

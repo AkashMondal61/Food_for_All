@@ -5,11 +5,11 @@ const auth = require('../middlewares/auth');
 
 // All route with get method 
 homeRouter.get('/', auth, homeController.getHomePage);
-homeRouter.get('/contact', homeController.getContactPage)
+homeRouter.get('/contact', auth, homeController.getContactPage)
 homeRouter.get('/login', homeController.getLoginPage);
-homeRouter.get('/scheme', homeController.getSchemePage);
+homeRouter.get('/scheme', auth, homeController.getSchemePage);
 homeRouter.get('/logout', auth, homeController.getLogOutPage);
-homeRouter.get('/NGO/:id', homeController.getNGOPage);
+homeRouter.get('/NGO/:id', auth, homeController.getNGOPage);
 homeRouter.get('/donate/:id', auth, homeController.getQR);
 homeRouter.get('/donate/form/:id', auth, homeController.getpayForm);
 
