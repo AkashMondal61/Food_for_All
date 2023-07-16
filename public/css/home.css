@@ -84,7 +84,7 @@ html {
         text-align: right;
         margin-right: 0px;
         position:absolute;
-        background-color:transparent;
+        background-color:rgb(61, 59, 59);
         width: 100%;
         top: 49px;
         overflow:auto;
@@ -618,4 +618,21 @@ html {
     transition: 0.5s;
     font-weight: 500;
     position: relative;
+  }
+/* ******************************* Foter *********************** */
+.footer-bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #312f2f;
+}
+.social-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons a {
+    margin: 0 10px; /* Add spacing between social icons if desired */
   }
