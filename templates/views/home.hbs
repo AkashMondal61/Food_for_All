@@ -131,7 +131,7 @@
         <div class="footer-bottom">
             <p>&copy; 2023 Your Organization. All rights reserved.</p>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
               <a href="#"><i class="fab fa-twitter"></i></a>
               <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
@@ -139,24 +139,7 @@
     </footer>
     <!-- scripts  -->
     <script src="/js/navbar.js"></script>
-    <script>
-        let valueDisplays = document.querySelectorAll(".num");
-let interval = 20;
-
-valueDisplays.forEach((valueDisplay) => {
-  let startValue = 0;
-  let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-  console.log(endValue);
-  let duration = Math.floor(interval / endValue);
-  let counter = setInterval(function () {
-    valueDisplay.textContent = startValue;
-    if (startValue == endValue) {
-      clearInterval(counter);
-    }
-    startValue += 1;
-  }, duration);
-});
-    </script>
+    <script src="/js/increment.js"></script>
 
 </body>
 </html>
