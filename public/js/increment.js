@@ -1,14 +1,15 @@
 let valueDisplays = document.querySelectorAll(".num");
-let interval = 20;
+let interval = 5000;
 
 valueDisplays.forEach((valueDisplay) => {
   let startValue = 0;
   let endValue = parseInt(valueDisplay.getAttribute("data-val"));
   console.log(endValue);
-  let duration = Math.floor(interval / endValue);
-  let increment=1;
-  if(endValue > 100) 
-   increment=11;
+  let steps=Math.min(endValue,600);
+  let duration = interval/steps;
+  let increment=Math.ceil(endValue/steps);
+//   if(endValue > 100) 
+//    increment=11;
   console.log(duration);
   let counter = setInterval(function () {
     valueDisplay.textContent = startValue;
@@ -21,5 +22,5 @@ valueDisplays.forEach((valueDisplay) => {
       clearInterval(counter);
     }
     startValue += increment;
-  }, 1);
+  }, duration);
 });
