@@ -21,16 +21,14 @@ body{
     /* background-color: aqua; */
     /* margin: 0% 4%; */
     margin-left: 4%;
-    padding: 4% 0%;
+    padding: 6% 0%;
     width: 60%;
     color: white;
   }
   @media only screen and (max-width : 900px ) {
     .first{
-      /* background-color: aqua; */
-      /* margin: 0% 4%; */
       margin-left: 0%;
-      padding: 4% 0%;
+      padding: 7% 0%;
       width: 60%;
       color: white;
     }
@@ -113,11 +111,13 @@ body{
 } */
 .details{
     margin-top: 12%;
-    width: 270px;
+    width: 260px;
     height: 380px;
     background: linear-gradient(to top, rgba(56, 60, 56, 0.8)50%,rgba(66, 70, 65, 0.8)50%);
     /* position: absolute; */
     top: -20px;
+    margin-top: 15%;
+    margin-right: 4%;
     /* left: 870px; */
     transform: translate(0%,-5%);
     border-radius: 10px;
@@ -227,9 +227,12 @@ body{
 
 /* donate button  */
 
-@media only screen and (max-width : 700px ) {
+@media only screen and (max-width : 796px ) {
 
     /* *******************************   About us  **************************************** */
+    .content{
+      padding: 6% 2%;
+    }
     .about{
         width: 100%;
         display: block;
@@ -283,7 +286,7 @@ body{
         /* left: 870px; */
         transform: translate(0%,-5%);
         border-radius: 10px;
-        margin-left: 30%;
+        margin-left: 15%;
     }
 }
 /* 

@@ -87,8 +87,10 @@ body {
 }
  /* ************ QR code ************ */
  .containers{
-	margin-left: 20%;
+	margin-left: 17%;
+	margin-right: 10px;
 	margin-bottom: 10px;
+	margin-bottom: 20px;
  }
  .img-area {
 	position: relative;
@@ -163,6 +165,9 @@ body {
 	cursor: pointer;
 	transition: all .3s ease;
 } 
+.row{
+	margin-bottom: 2px;
+}
 /* ************ UPI ************ */
 #UPI{
 	margin-top: 20%;
@@ -220,6 +225,7 @@ body {
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     display: flex;
     flex-direction: column;
+	overflow: auto;
 }
 table{
     padding: 20px;
@@ -234,4 +240,9 @@ th,td{
 	width: 100px;
 	border-radius: 100%;
 	border: 5px solid #fff;
+}
+@media only screen and (max-width : 796px ){
+	.containers{
+	margin: auto;
+	}
 }

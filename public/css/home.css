@@ -420,7 +420,6 @@ html {
     font-weight: 400;
 }
 
-
 @media only screen and (max-width : 700px ) {
 
     /* ******************************   Counter  *********************** */
@@ -551,7 +550,7 @@ html {
 /* contact mobile view */ 
 @media only screen and (max-width : 700px) {
     .contact {
-        padding: 50px 0;
+        padding:  25% 5%;
     }
     .contactcontanner {
         width: 95%;
