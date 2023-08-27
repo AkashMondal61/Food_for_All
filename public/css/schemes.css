@@ -156,10 +156,9 @@ body{
     .main{
       width: 100%;
       box-sizing: border-box;
-      /* padding: 15px 15px; */
-      /* background-color: #11a016; */
+      padding: 20% 9%;
     }
- 
+   
       .cards {
           grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
           gap: 1.5rem;

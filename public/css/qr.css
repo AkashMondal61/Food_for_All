@@ -98,7 +98,9 @@ body,html{
     padding: 0rem 5rem 6rem 0rem;
   }
   
-  
+  .user-card-info a{
+    color:rgb(93, 167, 236);
+  }
   .user-card-info p {
     font-size: 1.6rem;
     font-weight: bold;

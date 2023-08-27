@@ -18,8 +18,6 @@ body{
     display: flex;
 }
  .first{
-    /* background-color: aqua; */
-    /* margin: 0% 4%; */
     margin-left: 4%;
     padding: 6% 0%;
     width: 60%;
@@ -106,9 +104,6 @@ body{
     color: rgb(1, 99, 1);
     font-size: 1.2rem;
 }
-/* .detail{
-    width: 20%;
-} */
 .details{
     margin-top: 12%;
     width: 260px;
@@ -128,7 +123,7 @@ body{
   color: white;
 }
 .details h2{
-    width: 220px;
+    width: 100%;
     font-family: sans-serif;
     text-align: center;
     color:rgb(1, 99, 1);
@@ -175,10 +170,7 @@ body{
 .about{
     width: 100%;
     display: flex;
-    /* background-color: rgb(104, 98, 98); */
-   
-   /* padding-top: 80px; */
-    /* background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.6)) , url('donation.png'); */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.8),rgba(0, 0, 0, 0.6)) , url('donation.png'); */
     z-index: -200; 
     background-size: cover;
     background-position: center;
@@ -230,6 +222,9 @@ body{
 @media only screen and (max-width : 796px ) {
 
     /* *******************************   About us  **************************************** */
+    .details ul{
+      list-style-type: none;
+    }
     .content{
       padding: 6% 2%;
     }
@@ -360,7 +355,7 @@ body{
     margin-bottom:30px
   }
 }
-@media (max-width:700px)
+@media (max-width:796px)
 {
   .site-footer
   {
@@ -371,17 +366,18 @@ body{
   {
     text-align:center
   }
+  .details{
+    width: 60%;
+    align-items: center;
+    text-align: center;
+  }
 }
 /* ******************* slider ******************** */
 .main{
   z-index: 999;
   margin: 5% auto;
   width: 800px;
-  /* height: 500px; */
-  /* box-shadow: 0px 0px 3px rgb(241, 236, 236); */
-  /* position: relative; */
   overflow: hidden;
- /* display: none; */
 }
 .names{
 display: none;  
@@ -390,21 +386,10 @@ visibility: hidden;
 .slider{
   width: 800px;
   height: 400px;
-  /* display: grid;
-  grid-template-columns: auto auto auto auto; */
   display: flex;
   flex-direction: row;
-  /* display: none; */
-  /* overflow-x: scroll; */
-  /* animation-name: slideranimation;
-  animation-duration: 12sec; */
   transition: transform 0.5s ease-in-out;
-  /* overflow-x: hidden; */
 }
-/* .images{
-  position: relative;
-  overflow-x: hidden;
-} */
 .slider img{
   width: 50%;
   flex: none;
@@ -415,7 +400,21 @@ visibility: hidden;
     width: 400px;
   }
   .slider{
+    height: 400px;
     width: 400px;
+  }
+  .slider img{
+    width: 100%;
+  }
+}
+@media (max-width:400px)
+{
+  .main{
+    width: 300px;
+  }
+  .slider{
+    height: 300px;
+    width: 300px;
   }
   .slider img{
     width: 100%;
